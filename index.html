@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node; 2026 AI Development Summit</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat (English) & Noto Sans JP (Japanese) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+            background-color: #050505; /* 深い黒でラグジュアリー感を演出 */
+            color: #f0f0f0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* 近未来的なガラス風パネル */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.4s ease, border 0.4s ease;
+        }
+        .glass-panel:hover {
+            background: rgba(30, 30, 30, 0.6);
+            transform: translateY(-8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        /* スクロールアニメーション用クラス */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ▼ ローカルの背景画像ファイルを指定 ▼ */
+        .hero-bg {
+            background-image: url('bg-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* パララックス効果 */
+        }
+        .hero-overlay {
+            /* テキストやロゴを際立たせるためのダークグラデーション */
+            background: radial-gradient(circle at center, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.95) 100%);
+        }
+
+        /* 装飾的な縦線 */
+        .vertical-line {
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent);
+            margin: 0 auto;
+        }
+
+        /* 強調用テキストスタイル */
+        .highlight-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="selection:bg-gray-700 selection:text-white">
+
+    <!-- ==========================================
+         Hero Section
+         ========================================== -->
+    <header class="relative h-screen flex flex-col justify-center px-6 hero-bg">
+        <div class="absolute inset-0 hero-overlay z-0"></div>
+        
+        <!-- ▼ コンテンツを右寄せにするためのコンテナ (items-end, text-right を追加) ▼ -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto reveal active flex flex-col items-end text-right">
+            
+            <!-- ▼ ローカルのロゴ画像ファイルを指定 ▼ -->
+            <img src="logo-main.png" 
+                 alt="Node; 2026 AI Development Summit" 
+                 class="w-auto h-32 md:h-48 lg:h-56 mb-8 object-contain drop-shadow-2xl">
+            
+        </div>
+
+        <!-- スクロールを促すインジケーター -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-pulse opacity-50 z-10 hover:opacity-100 transition-opacity cursor-pointer" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+            <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] mb-4 text-gray-400">Scroll to Explore</span>
+            <div class="w-[1px] h-12 md:h-16 bg-gradient-to-b from-gray-400 to-transparent"></div>
+        </div>
+    </header>
+
+
+    <!-- ==========================================
+         Concept Section
+         ========================================== -->
+    <section class="py-32 px-6 bg-[#050505] relative overflow-hidden">
+        <!-- 背景の微かな光の演出 -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-white opacity-[0.01] blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="reveal text-center mb-24">
+                <div class="text-xs tracking-[0.3em] text-gray-500 mb-6 uppercase">Concept</div>
+                <h2 class="text-4xl md:text-5xl font-light tracking-widest mb-8 text-white">
+                    AI <span class="mx-3 font-extralight text-gray-500">×</span> [ <span class="inline-block w-20 border-b border-gray-400 align-middle transform -translate-y-2"></span> ]
+                </h2>
+            </div>
+
+            <div class="reveal space-y-12 text-gray-300 leading-loose text-justify md:text-left text-lg">
+                <p class="text-2xl md:text-3xl font-normal text-white mb-8 tracking-wide">
+                    AIによって、<span class="highlight-text">ソフトウェア開発はどう変わるのか。</span>
+                </p>
+                <p class="font-light">
+                    圧倒的なスピードで進化するAIは、ついに「実証実験」から「実用レベルのソフトウェア開発」へとフェーズを移行させました。<br><br>
+                    本イベントは、AI駆動開発を実践したいエンタープライズ企業に対し、AIと各要素を掛け合わせた講演やワークショップで構成されたオフライン型のカンファレンスイベントです。
+                </p>
+                
+                <div class="py-8">
+                    <ul class="list-none space-y-5 pl-0 text-gray-400 border-l border-gray-800 pl-8 text-base md:text-lg">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gray-600 rounded-full mr-4"></span>AIによって、変わる次世代の <span class="text-white ml-2 font-medium">[ 開発手法 ]</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gray-600 rounded-full mr-4"></span>AIによって、再設計される <span class="text-white ml-2 font-medium">[ チーム構成 ]</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gray-600 rounded-full mr-4"></span>AIによって、変化する <span class="text-white ml-2 font-medium">[ 人間の役割と意思決定の方法 ]</span></li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-gray-600 rounded-full mr-4"></span>AIによって、進化する <span class="text-white ml-2 font-medium">[ 開発プラットフォーム ]</span></li>
+                    </ul>
+                </div>
+                
+                <p class="font-light">
+                    AIというテクノロジーに、何を掛け合わせるのか。<br>
+                    様々な要素を掛け合わせながら、AI時代のソフトウェア開発の「今後の姿」と「実践知」を、皆さんと共に探求するイベントです。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 装飾的な区切り線 -->
+    <div class="py-12 bg-[#050505]"><div class="vertical-line"></div></div>
+
+
+    <!-- ==========================================
+         Programs Section (tv, labs, lounge)
+         ========================================== -->
+    <section class="py-32 px-6 bg-[#050505] relative">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="reveal text-center mb-28">
+                <div class="text-xs tracking-[0.3em] text-gray-500 mb-6 uppercase">Programs</div>
+                <h2 class="text-3xl md:text-4xl font-light tracking-wide text-white">
+                    The Elements of Node;
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                
+                <!-- Node;tv -->
+                <div class="glass-panel p-10 lg:p-12 rounded-2xl reveal relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-[0.02] rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2 group-hover:opacity-[0.04] transition-opacity"></div>
+                    
+                    <!-- 指定のロゴ画像に差し替え -->
+                    <img src="tv221x96.png" alt="Node; tv" class="h-10 w-auto mb-5 object-contain">
+                    
+                    <p class="text-[10px] text-gray-500 tracking-[0.2em] mb-8 uppercase font-medium">Media Channel</p>
+                    
+                    <p class="text-sm text-gray-400 mb-8 h-24 leading-relaxed font-light">
+                        エンタープライズ企業におけるAI駆動開発の最前線をお届けする公式動画チャンネルです。先進企業の事例や実践的なインサイト（知見）を継続的に発信します。
+                    </p>
+                    <p class="text-xs text-gray-500 italic font-serif leading-relaxed">
+                        Your definitive video channel for enterprise AI-driven development insights.
+                    </p>
+                </div>
+
+                <!-- Node;labs. -->
+                <div class="glass-panel p-10 lg:p-12 rounded-2xl reveal relative overflow-hidden group" style="transition-delay: 150ms;">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-[0.02] rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2 group-hover:opacity-[0.04] transition-opacity"></div>
+                    
+                    <!-- 指定のロゴ画像に差し替え -->
+                    <img src="labs277x96.png" alt="Node; labs." class="h-10 w-auto mb-5 object-contain">
+                    
+                    <p class="text-[10px] text-gray-500 tracking-[0.2em] mb-8 uppercase font-medium">Hands-on Workshop</p>
+                    
+                    <p class="text-sm text-gray-400 mb-8 h-24 leading-relaxed font-light">
+                        最新のAIツールを実際に手を動かして学び、次世代の開発ワークフローを参加者と共に創り上げる実践的なハンズオン・ワークショップです。
+                    </p>
+                    <p class="text-xs text-gray-500 italic font-serif leading-relaxed">
+                        Hands-on workshops to master AI tools and co-create next-generation development workflows.
+                    </p>
+                </div>
+
+                <!-- Node;lounge -->
+                <div class="glass-panel p-10 lg:p-12 rounded-2xl reveal relative overflow-hidden group" style="transition-delay: 300ms;">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-[0.02] rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2 group-hover:opacity-[0.04] transition-opacity"></div>
+                    
+                    <!-- 指定のロゴ画像に差し替え -->
+                    <img src="lounge318x96.png" alt="Node; lounge" class="h-10 w-auto mb-5 object-contain">
+                    
+                    <p class="text-[10px] text-gray-500 tracking-[0.2em] mb-8 uppercase font-medium">Networking</p>
+                    
+                    <p class="text-sm text-gray-400 mb-8 h-24 leading-relaxed font-light">
+                        業界を牽引するリーダー層と繋がり、各社のリアルな「実践知」を深く意見交換できる、ワンランク上の特別なネットワーキングの場をご提供します。
+                    </p>
+                    <p class="text-xs text-gray-500 italic font-serif leading-relaxed">
+                        Exclusive networking to link with industry leaders and exchange practical knowledge.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Footer
+         ========================================== -->
+    <footer class="py-16 border-t border-gray-900 bg-[#020202] text-center relative z-10">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col items-center">
+            
+            <div class="mb-12 flex flex-col items-center">
+                <span class="text-[10px] font-medium tracking-[0.3em] text-gray-600 uppercase mb-4">Presented by</span>
+                <!-- フッター用の企業ロゴ等を配置する場合はここ -->
+                <div class="text-xl font-bold tracking-widest text-white flex items-center gap-2">
+                    <div class="w-6 h-6 bg-red-600 rounded-sm transform rotate-45"></div>
+                    <span class="ml-2">Red Hat</span>
+                </div>
+            </div>
+            
+            <div class="w-12 h-[1px] bg-gray-800 mb-8"></div>
+            
+            <p class="text-[10px] text-gray-600 tracking-[0.2em] uppercase">
+                &copy; 2026 Node; AI Development Summit. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- スクロールアニメーション用のJavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // スクロール時に要素をフェードインさせる処理
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOnScroll = function() {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 120; // 画面下部からどれくらい見えたらアニメーションを発火させるか
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add("active");
+                    }
+                });
+            };
+
+            // 初期表示時にもチェック
+            revealOnScroll();
+            // スクロール時にチェック
+            window.addEventListener("scroll", revealOnScroll, { passive: true });
+        });
+    </script>
+</body>
+</html>
